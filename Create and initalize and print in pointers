@@ -1,0 +1,15 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int a=6; // here we have first initialize the value of a
+    int *ptr=&a; //here * indicates the value of and & indicates the address of
+    
+    printf("%d \n", ptr); // ptr will only represent the addresss of the value
+    printf("%d \n", &a);  // &a will do the same it will represent the address where the avlue si stored
+    
+    printf("%d \n", *ptr); // *ptr as we have discussed above it represent the value so it will print the vale
+    printf("%d \n", a); // here we have directly called the a variable due to which it will directly reprent value
+
+    return 0;
+}
