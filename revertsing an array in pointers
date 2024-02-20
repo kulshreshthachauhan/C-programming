@@ -1,0 +1,35 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+    void reverseArray(int *arr, int size){
+    int *start=arr; // we point to the start of an array
+    int *end= arr+size-1; // then we point to the end of an array
+    
+    while(start<end){ //to start from last we put a condition 
+        int temp = *start; //we have created a temp variable to store the valuue of start.
+        *start=*end; // then put the value of end at start
+        *end= temp;// then the stored value of start at temp will be putted at end
+        
+        start++;// here after first value we exchange the vlue of second with second last thats why we used ++_ for start and -- for end
+        end--;
+    }
+}
+//for printing the value
+int main(){
+    int arr[]={1,5,6,8,9};
+    int size=sizeof(arr)/sizeof(arr[0]);
+    
+    printf("Origional array :");
+    for(int i=0;i<size;i++){
+    printf("%d\t", arr[i]);
+    }
+    reverseArray(arr,size);
+    
+    printf("Reversed array :");
+    for(int i=0;i<size;i++){
+    printf("%d\t", arr[i]);
+}
+    
+
+    return 0;
+}
