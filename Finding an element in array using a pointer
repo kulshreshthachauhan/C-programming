@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+// Function to search for an element in an array
+int* search(int *arr, int size, int target) {
+    int *ptr = NULL;
+    
+    for (int i = 0; i < size; ++i) {
+        if (*arr == target) {
+            ptr = arr; // Store the address of the element if found
+            break;
+        }
+        arr++; // Move the pointer to the next element
+    }
+    
+    return ptr; // Return the pointer to the element, or NULL if not found
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int target = 3;
+
+    int *result = search(arr, size, target);
+
+    if (result != NULL) {
+        printf("Element %d found at index %d\n", *result, result - arr);
+    } else {
+        printf("Element not found\n");
+    }
+
+    return 0;
+}
+
+//what have i learned from this code
+//int *result= serach(arr, size, target) he we have added the areas from where we have to search the tager values
+//2, here we have done result-arr because we have the found the index of the the target element.
+// ptr=arr here ptr will hold the address 
